@@ -7,7 +7,6 @@ from vertexai.generative_models import GenerativeModel, Part
 from dotenv import load_dotenv
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import LanceDB
-from io import StringIO
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 load_dotenv()
