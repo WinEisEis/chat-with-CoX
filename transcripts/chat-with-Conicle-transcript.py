@@ -44,7 +44,7 @@ def create_vector_database(category=None):
             with open(file) as f:
                 doc_list.append(f.read())
 
-    text_splitter = CharacterTextSplitter(separator=',', chunk_size=10000, chunk_overlap=1000)
+    text_splitter = CharacterTextSplitter(separator=',', chunk_size=100000, chunk_overlap=1000)
     documents = text_splitter.create_documents(doc_list)
     vector_store = LanceDB.from_documents(documents, embeddings, connection=table)
 
