@@ -31,25 +31,25 @@ def create_vector_database(category=None):
     )
 
     # Load the document, split it into chunks, embed each chunk and load it into the vector store.
-    doc_list = []
-    dl_dir = 'transcripts/'
-    for file in glob.glob(dl_dir + "/*.txt"):
-        if category is not None:
-            print("CATEGORY CASE")
-            if category.lower() in file.lower():
-                with open(file) as f:
-                    doc_list.append(f.read())
-        else:
-            print("ALL CATEGORY CASE")
-            with open(file) as f:
-                doc_list.append(f.read())
+    # doc_list = []
+    # dl_dir = 'transcripts/'
+    # for file in glob.glob(dl_dir + "/*.txt"):
+    #     if category is not None:
+    #         print("CATEGORY CASE")
+    #         if category.lower() in file.lower():
+    #             with open(file) as f:
+    #                 doc_list.append(f.read())
+    #     else:
+    #         print("ALL CATEGORY CASE")
+    #         with open(file) as f:
+    #             doc_list.append(f.read())
+    #
+    # text_splitter = CharacterTextSplitter(separator=',', chunk_size=10000, chunk_overlap=1000)
+    # documents = text_splitter.create_documents(doc_list)
+    # print('doclist', doc_list)
+    # vector_store = LanceDB.from_documents(documents, embeddings, connection=table)
 
-    text_splitter = CharacterTextSplitter(separator=',', chunk_size=10000, chunk_overlap=1000)
-    documents = text_splitter.create_documents(doc_list)
-    print('doclist', doc_list)
-    vector_store = LanceDB.from_documents(documents, embeddings, connection=table)
-
-    return vector_store
+    return 0
 
 
 def get_conversational_chain(prompt):
